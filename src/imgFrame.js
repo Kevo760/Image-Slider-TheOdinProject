@@ -52,18 +52,7 @@ function imgFrame(url) {
 }
 
 
-function frameHolder(array) {
-    const frameHolder = document.createElement('div');
-    frameHolder.classList.add('frame-holder');
 
-    //Handles array image links
-    for(let i = 0; i < array.length; i++) {
-
-    }
-
-
-    return frameHolder;
-};
 
 
 

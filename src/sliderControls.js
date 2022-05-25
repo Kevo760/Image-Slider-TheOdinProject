@@ -1,11 +1,13 @@
+import { createFrame } from "./imgSliderPage";
+
 function backArrow() {
     const arrow = document.createElement('span');
     arrow.classList.add('back-arrow');
-    arrow.innerText = '❮';
+    arrow.innerText = '«';
 
 // Arrow style
     arrow.style.color = 'white';
-    arrow.style.fontSize = '5rem';
+    arrow.style.fontSize = '3rem';
     arrow.style.position = 'absolute';
     arrow.style.left = '0';
     arrow.style.padding = '1rem';
@@ -22,11 +24,11 @@ function backArrow() {
 function forwardArrow() {
     const arrow = document.createElement('span');
     arrow.classList.add('forward-arrow');
-    arrow.innerText = '❯';
+    arrow.innerText = '»';
 
     // Arrow style
     arrow.style.color = 'white';
-    arrow.style.fontSize = '5rem';
+    arrow.style.fontSize = '3rem';
     arrow.style.position = 'absolute';
     arrow.style.right = '0';
     arrow.style.padding = '1rem';
@@ -41,7 +43,20 @@ function forwardArrow() {
     return arrow
 }
 
+function imageSelectorUI(array) {
+    const imgSelector = document.createElement('div');
+    imgSelector.classList.add('img-selector');
+
+    for(let i = 0; i < array.length; i++) {
+        const selector = document.createElement('span');
+        selector.classList.add('dot-selector');
+        imgSelector.append(selector);
+    };
+
+    return imgSelector
+};
 
 
 
-export {forwardArrow, backArrow}
+
+export {forwardArrow, backArrow, imageSelectorUI}

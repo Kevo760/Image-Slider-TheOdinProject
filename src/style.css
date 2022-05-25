@@ -33,7 +33,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     margin: 15rem auto;
     background-color: silver;
     width: 100%;
@@ -54,13 +54,56 @@ header h1 {
     display: flex;
     gap: 2rem; 
     flex-direction: row;
+    order: 1;
 }
 
+.img-selector {
+    height: 2rem;
+    text-align: center;
+    padding: 1rem;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
-.shadow {
-    -webkit-filter: drop-shadow( 0 0 1px rgba(255, 255, 255, 0.9));
-    filter: drop-shadow( 0 0 3px rgba(255, 255, 255, 0.9));
-    /* Similar syntax to box-shadow */
+.dot-selector {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-color: black;
+    margin: .2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot-selector:hover {
+    transform: scale(1.4);
+    opacity: .4;
+    transition: opacity 300ms ease-in-out 0s;
+    transition: transform 300ms ease-in-out 0s;
+}
+
+.dot-selector.active {
+    transform: scale(1.4);
+    opacity: .4;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
   }
+  
+  @keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+  }
+
+  
+
 
 /*============================= IMG SLIDER =============================== */

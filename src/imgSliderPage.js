@@ -1,5 +1,5 @@
-import { forwardArrow, backArrow } from "./sliderControls";
-import  { imgFrame, createImg } from './imgFrame';
+import { forwardArrow, backArrow, imageSelectorUI } from "./sliderControls";
+import  { imgFrame } from './imgFrame';
 
 
 
@@ -13,34 +13,32 @@ function createImgSliderSection(array) {
     // Adds back arrow
     imgSliderPage.append(backArrow());
 
-    // Adds frame holder
-    imgSliderPage.append(frameHolder(array));
+    imgSliderPage.append(createFrame(array, '0'));
+
+    imgSliderPage.append(imageSelectorUI(array));
 
     // Adds forward arrow
     imgSliderPage.append(forwardArrow());
 
-
-
-    return document.body.append(imgSliderPage);
+    document.body.append(imgSliderPage);
 };
 
 
 
-function frameHolder(array) {
+function createFrame(array, slide) {
+
     const frameHolder = document.createElement('div');
     frameHolder.classList.add('frame-holder');
+    frameHolder.classList.add('fade');
 
-    
-        frameHolder.append(imgFrame(array[1].url));
-   
+    // shows image frame
+   frameHolder.append(imgFrame(array[slide].url)); 
 
-
-    return frameHolder;
+   return frameHolder
 };
 
 
 
 
 
-
-export { createImgSliderSection };
+export { createImgSliderSection, createFrame};
